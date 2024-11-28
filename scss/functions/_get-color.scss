@@ -8,9 +8,9 @@
     $color-levels: map.get($colors, $type);
 
     // Periksa apakah level warna valid dalam $color-levels
-    @if map.has-key($color-levels, '#{$level}') {
+    @if map.has-key($color-levels, $level) {
       // Kembalikan warna dari $color-levels berdasarkan level
-      @return map.get($color-levels, '#{$level}');
+      @return map.get($color-levels, $level);
     } @else {
       @warn 'Invalid color level: #{$level} for type: #{$type}';
       @return null;
